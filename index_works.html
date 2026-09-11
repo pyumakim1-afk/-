@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f6f7fb">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="우리집 일정">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<title>우리집 학원 일정</title>
+<style>
+:root{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;color:#17243a;background:#f6f7fb;--blue:#254fc0;--line:#dce2ed;--muted:#59677d}*{box-sizing:border-box}body{margin:0}button,input,select,textarea{font:inherit}button{cursor:pointer;touch-action:manipulation}button:focus-visible,a:focus-visible{outline:3px solid #1976d2;outline-offset:3px}button{min-height:44px;border:1px solid var(--line);background:#fff;border-radius:10px;color:inherit;padding:10px 14px}.app{max-width:740px;margin:auto;padding:28px 18px calc(105px + env(safe-area-inset-bottom))}.eyebrow{font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--blue)}h1{font-size:28px;letter-spacing:-1px;margin:9px 0}p{line-height:1.6}.sub{font-size:14px;color:var(--muted);margin:0}.top{display:flex;justify-content:space-between;align-items:center;gap:12px}.local{font-size:12px;color:#334970;border:1px solid var(--line);border-radius:6px;padding:6px 8px;white-space:nowrap}.notice{font-size:12px;line-height:1.65;color:var(--muted);margin:18px 0}.warning{border:1px solid #d99b42;background:#fff6e8;color:#6d4311;padding:12px;border-radius:8px;font-size:13px;line-height:1.6;margin-top:12px}.hidden,[hidden]{display:none!important}.filters{display:flex;gap:6px;margin:22px 0 12px}.filters button{flex:1;font-weight:600}.selected{background:#e8eefc!important;color:#183d9b!important;border-color:#8ca6e7!important}.days{display:grid;grid-template-columns:repeat(8,1fr);gap:5px}.days button{padding:10px 0;font-size:14px;border-radius:8px}.summary{margin:22px 0 12px;display:flex;justify-content:space-between;align-items:center;gap:10px}.summary h2{font-size:18px;margin:0}.count{font-size:13px;color:var(--muted)}.group-title{margin:20px 0 10px;font-size:14px;color:var(--muted)}.card{background:white;border:1px solid var(--line);border-radius:14px;padding:18px;margin:10px 0}.card-head{display:flex;gap:12px;align-items:flex-start;justify-content:space-between}.badge{display:inline-block;font-size:12px;line-height:1.4;padding:4px 8px;border-radius:5px;background:#eaf0ff;color:#234995}.badge.daughter{background:#f0edf8;color:#654890}.subject{font-size:19px;margin:9px 0 0;overflow-wrap:anywhere}.time{font-size:15px;font-weight:700;white-space:nowrap;padding-top:4px}.route{display:grid;grid-template-columns:1fr 22px 1fr;gap:8px;align-items:center;background:#f6f8fc;border-radius:8px;margin:16px 0 12px;padding:12px}.route small{display:block;color:var(--muted);font-size:11px;margin-bottom:6px}.place{font-size:14px;line-height:1.5;overflow-wrap:anywhere}.arrow{color:#77849b;text-align:center}.memo{font-size:13px;white-space:pre-wrap;overflow-wrap:anywhere;color:var(--muted);margin:10px 0}.actions{display:flex;justify-content:flex-end;gap:8px}.actions button{font-size:13px;padding:8px 14px}.delete{color:#a03333}.empty{text-align:center;padding:44px 16px;background:#fff;border:1px dashed #c8d2e2;border-radius:12px;color:var(--muted);font-size:14px;line-height:1.9}.empty strong{display:block;color:#253b59;font-size:17px}.primary{background:var(--blue);color:#fff;border-color:var(--blue);font-weight:700}.addbar{position:fixed;bottom:0;left:0;right:0;border-top:1px solid var(--line);background:#f6f7fb;padding:12px 18px calc(12px + env(safe-area-inset-bottom));z-index:2}.addbar button{display:block;width:100%;max-width:704px;margin:auto;min-height:50px}.backup{margin-top:28px;border-top:1px solid var(--line);padding-top:18px}.backup h2{font-size:14px;margin:0 0 10px}.backup .row{display:flex;gap:8px;flex-wrap:wrap}.backup button{font-size:13px}.backup p{font-size:12px;color:var(--muted);margin-bottom:0}dialog{width:calc(100% - 24px);max-width:540px;max-height:90dvh;border:1px solid var(--line);border-radius:16px;padding:0;background:#fff;color:inherit}dialog::backdrop{background:rgba(15,25,45,.45)}.modal-head{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid var(--line)}.modal-head h2{margin:0;font-size:20px}.close{border:0;font-size:22px;padding:4px 12px}form{padding:18px 20px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}label{display:block;font-size:13px;font-weight:600;margin-bottom:16px}.grid label{min-width:0}input,select,textarea{display:block;width:100%;min-width:0;margin-top:7px;min-height:46px;border:1px solid #bac5d6;border-radius:8px;background:white;color:#17243a;padding:10px;font-size:16px}textarea{resize:vertical;min-height:75px}input:focus,select:focus,textarea:focus{outline:2px solid #668be4;outline-offset:1px}.form-note{font-size:12px;color:var(--muted);margin:0 0 15px}.form-actions{display:flex;gap:10px}.form-actions button{flex:1}.error{font-size:13px;color:#9d2525;line-height:1.6;margin-bottom:12px}.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(86px + env(safe-area-inset-bottom));width:max-content;max-width:90%;padding:12px 18px;border-radius:8px;background:#17243a;color:white;font-size:14px;z-index:10;line-height:1.5}@media(max-width:380px){.app{padding-left:12px;padding-right:12px}.card{padding:14px}.time{font-size:13px}.local{display:none}.grid{gap:10px}form{padding:16px}}
+</style>
+</head>
+<body>
+<main class="app">
+<header><div class="eyebrow">FAMILY SCHEDULE</div><div class="top"><h1>우리집 학원 일정</h1><span class="local">이 브라우저에 저장</span></div><p class="sub">아들과 딸의 한 주를 한눈에 확인하세요.</p></header>
+<div id="storageWarning" class="warning" role="alert" hidden></div>
+<div id="fileWarning" class="warning" hidden>현재 파일을 직접 열어 사용 중입니다. 저장 동작은 브라우저마다 다를 수 있으므로 GitHub Pages의 HTTPS 주소로 이용하는 것을 권장합니다.</div>
+<nav class="filters" aria-label="자녀 선택"><button type="button" data-child="all">모두</button><button type="button" data-child="son">아들</button><button type="button" data-child="daughter">딸</button></nav>
+<nav class="days" aria-label="요일 선택"><button type="button" data-day="all">주간</button><button type="button" data-day="1">월</button><button type="button" data-day="2">화</button><button type="button" data-day="3">수</button><button type="button" data-day="4">목</button><button type="button" data-day="5">금</button><button type="button" data-day="6">토</button><button type="button" data-day="0">일</button></nav>
+<div class="summary"><h2 id="viewTitle">이번 주 일정</h2><span id="count" class="count"></span></div>
+<section id="scheduleList" aria-label="등록된 일정"></section>
+<section class="backup"><h2>일정 데이터 관리</h2><div class="row"><button id="exportBtn" type="button">백업 파일 저장</button><button id="importBtn" type="button">백업 복원</button></div><input id="importFile" type="file" accept=".json,application/json" hidden><p>일정은 매주 반복되는 시간표입니다. 이 기기의 현재 브라우저에만 저장되며, 자동 동기화·알림 기능은 없습니다. 브라우저 데이터 삭제 시 일정이 사라질 수 있으니 정기적으로 백업하세요. 비공개 모드 사용은 피해주세요.</p><p>로그인 잠금이 없는 개인용 버전입니다. 공용 기기에서는 사용하지 마세요. 백업 파일에는 일정과 장소가 포함되므로 비공개로 보관하세요.</p></section>
+</main>
+<div class="addbar"><button type="button" class="primary" id="addBtn">+ 학원 일정 등록</button></div>
+<dialog id="editor" aria-labelledby="editorTitle"><div class="modal-head"><h2 id="editorTitle">일정 등록</h2><button type="button" id="closeBtn" class="close" aria-label="닫기">×</button></div><form id="scheduleForm">
+<p class="form-note">매주 반복할 일정을 입력하세요. 메모 외 항목은 필수입니다.</p>
+<div class="grid"><label>자녀<select id="child" required><option value="son">아들</option><option value="daughter">딸</option></select></label><label>요일<select id="day" required><option value="1">월요일</option><option value="2">화요일</option><option value="3">수요일</option><option value="4">목요일</option><option value="5">금요일</option><option value="6">토요일</option><option value="0">일요일</option></select></label></div>
+<label>과목 / 학원명<input id="subject" maxlength="80" placeholder="예: 수학 / 튼튼수학" required></label>
+<div class="grid"><label>수업 시작 시간<input id="start" type="time" required></label><label>수업 종료 시간<input id="end" type="time" required></label></div>
+<label>출발 장소<input id="departure" maxlength="120" placeholder="예: 학교 정문" required></label><label>도착 장소<input id="arrival" maxlength="120" placeholder="예: 수학학원 2층" required></label>
+<label>메모 (선택)<textarea id="memo" maxlength="500" placeholder="예: 시작 20분 전에 출발해 주세요."></textarea></label>
+<p id="formError" class="error" role="alert" hidden></p><div class="form-actions"><button type="button" id="cancelBtn">취소</button><button type="submit" class="primary">일정 저장</button></div>
+</form></dialog>
+<div id="toast" class="toast" role="status" hidden></div>
+<script>
+'use strict';
+const KEY='family-academy-schedule-v1';
+const DAYS=['일요일','월요일','화요일','수요일','목요일','금요일','토요일'];
+const ORDER=[1,2,3,4,5,6,0];
+const $=id=>document.getElementById(id);
+let schedules=[],activeChild='all',activeDay='all',editId=null,toastTimer;
+const timePattern=/^(?:[01]\d|2[0-3]):[0-5]\d$/;
+function newId(){return window.crypto&&crypto.randomUUID?crypto.randomUUID():Date.now().toString(36)+'-'+Math.random().toString(36).slice(2);}
+function validRecord(s){
+ return !!s && typeof s==='object' && typeof s.id==='string' && s.id.length>0 && s.id.length<=100 && ['son','daughter'].includes(s.child) && Number.isInteger(s.day) && s.day>=0 && s.day<=6 && typeof s.start==='string' && typeof s.end==='string' && timePattern.test(s.start) && timePattern.test(s.end) && s.end>s.start && ['subject','departure','arrival'].every(k=>typeof s[k]==='string' && s[k].trim().length>0 && s[k].length<=(k==='subject'?80:120)) && typeof s.memo==='string' && s.memo.length<=500;
+}
+function cleanRecord(s){return {id:s.id,child:s.child,day:s.day,subject:s.subject.trim(),start:s.start,end:s.end,departure:s.departure.trim(),arrival:s.arrival.trim(),memo:s.memo};}
+function validateList(list){return Array.isArray(list)&&list.length<=5000&&list.every(validRecord)&&new Set(list.map(s=>s.id)).size===list.length;}
+function warn(message){$('storageWarning').textContent=message;$('storageWarning').hidden=false;}
+let loadBlocked=false;
+try{
+ const raw=localStorage.getItem(KEY);
+ if(raw!==null){const parsed=JSON.parse(raw);if(!validateList(parsed))throw new Error('invalid');schedules=parsed.map(cleanRecord);}
+ const probe=KEY+'-probe';localStorage.setItem(probe,'1');localStorage.removeItem(probe);
+}catch(e){loadBlocked=true;warn('브라우저 저장소를 읽거나 사용할 수 없습니다. 기존 데이터를 보호하기 위해 저장을 중단했습니다. 일반 브라우저의 HTTPS 주소에서 다시 열거나, 보관한 백업 파일을 복원하세요.');}
+if(location.protocol==='file:')$('fileWarning').hidden=false;
+function commit(next,allowRecovery=false){
+ if(loadBlocked&&!allowRecovery)throw new Error('저장소 문제로 저장할 수 없습니다. 상단 안내를 확인하세요.');
+ localStorage.setItem(KEY,JSON.stringify(next));schedules=next;loadBlocked=false;$('storageWarning').hidden=true;
+}
+function notify(text){clearTimeout(toastTimer);$('toast').textContent=text;$('toast').hidden=false;toastTimer=setTimeout(()=>{$('toast').hidden=true;},3500);}
+function node(tag,className,text){const e=document.createElement(tag);if(className)e.className=className;if(text!==undefined)e.textContent=text;return e;}
+function place(label,value){const box=node('div');box.append(node('small','',label),node('div','place',value));return box;}
+function render(){
+ document.querySelectorAll('[data-child]').forEach(b=>{const on=b.dataset.child===activeChild;b.classList.toggle('selected',on);b.setAttribute('aria-pressed',String(on));});
+ document.querySelectorAll('[data-day]').forEach(b=>{const on=b.dataset.day===activeDay;b.classList.toggle('selected',on);b.setAttribute('aria-pressed',String(on));});
+ const who=activeChild==='all'?'':(activeChild==='son'?'아들 · ':'딸 · ');
+ $('viewTitle').textContent=who+(activeDay==='all'?'주간 일정':DAYS[Number(activeDay)]+' 일정');
+ const list=schedules.filter(s=>(activeChild==='all'||s.child===activeChild)&&(activeDay==='all'||s.day===Number(activeDay))).sort((a,b)=>ORDER.indexOf(a.day)-ORDER.indexOf(b.day)||a.start.localeCompare(b.start)||a.subject.localeCompare(b.subject,'ko'));
+ $('count').textContent=list.length+'개 일정';const root=$('scheduleList');root.replaceChildren();
+ if(!list.length){const empty=node('div','empty');empty.append(node('strong','','등록된 일정이 없습니다.'),node('div','','아래 버튼을 눌러 학원 일정을 추가하세요.'));root.append(empty);return;}
+ let lastDay=-1;
+ list.forEach(s=>{
+  if(activeDay==='all'&&s.day!==lastDay){root.append(node('h3','group-title',DAYS[s.day]));lastDay=s.day;}
+  const card=node('article','card'),head=node('div','card-head'),identity=node('div');
+  identity.append(node('span','badge '+(s.child==='daughter'?'daughter':''),s.child==='son'?'아들':'딸'),node('h3','subject',s.subject));
+  head.append(identity,node('div','time',s.start+' – '+s.end));
+  const route=node('div','route');route.append(place('출발 장소',s.departure),node('span','arrow','→'),place('도착 장소',s.arrival));
+  const actions=node('div','actions'),edit=node('button','','수정'),del=node('button','delete','삭제');edit.type='button';del.type='button';
+  edit.setAttribute('aria-label',s.subject+' 일정 수정');del.setAttribute('aria-label',s.subject+' 일정 삭제');
+  edit.addEventListener('click',()=>openEditor(s.id));
+  del.addEventListener('click',()=>{
+   if(!confirm(DAYS[s.day]+' '+s.start+' '+s.subject+' 일정을 삭제할까요?\n삭제한 일정은 되돌릴 수 없습니다.'))return;
+   try{commit(schedules.filter(x=>x.id!==s.id));render();notify('일정을 삭제했습니다.');}catch(e){notify('삭제를 저장하지 못했습니다. 브라우저 저장소를 확인하세요.');}
+  });
+  actions.append(edit,del);card.append(head,route);if(s.memo)card.append(node('p','memo',s.memo));card.append(actions);root.append(card);
+ });
+}
+function openEditor(id=null){
+ if(loadBlocked){notify('저장소 문제를 먼저 해결해 주세요. 상단 안내를 확인하세요.');return;}
+ editId=id;$('scheduleForm').reset();$('formError').hidden=true;
+ $('editorTitle').textContent=id?'일정 수정':'일정 등록';
+ if(id){const s=schedules.find(x=>x.id===id);if(!s){notify('일정을 찾을 수 없습니다.');return;}['child','day','subject','start','end','departure','arrival','memo'].forEach(k=>{$(k).value=s[k];});}
+ else{$('child').value=activeChild==='all'?'son':activeChild;$('day').value=activeDay==='all'?String(new Date().getDay()):activeDay;}
+ $('editor').showModal();
+}
+$('addBtn').addEventListener('click',()=>openEditor());['closeBtn','cancelBtn'].forEach(id=>$(id).addEventListener('click',()=>$('editor').close()));
+document.querySelectorAll('[data-child]').forEach(b=>b.addEventListener('click',()=>{activeChild=b.dataset.child;render();}));
+document.querySelectorAll('[data-day]').forEach(b=>b.addEventListener('click',()=>{activeDay=b.dataset.day;render();}));
+$('scheduleForm').addEventListener('submit',event=>{
+ event.preventDefault();$('formError').hidden=true;
+ const s={id:editId||newId(),child:$('child').value,day:Number($('day').value),subject:$('subject').value.trim(),start:$('start').value,end:$('end').value,departure:$('departure').value.trim(),arrival:$('arrival').value.trim(),memo:$('memo').value.trim()};
+ if(!validRecord(s)){$('formError').textContent='필수 항목을 입력하고, 종료 시간을 시작 시간보다 늦게 설정해 주세요. 자정을 넘기는 수업은 지원하지 않습니다.';$('formError').hidden=false;return;}
+ if(!editId&&schedules.length>=5000){$('formError').textContent='최대 5,000개까지 저장할 수 있습니다.';$('formError').hidden=false;return;}
+ const overlap=schedules.some(x=>x.id!==s.id&&x.child===s.child&&x.day===s.day&&s.start<x.end&&s.end>x.start);
+ if(overlap&&!confirm('같은 자녀의 다른 일정과 수업 시간이 겹칩니다. 그래도 저장할까요?'))return;
+ const wasEdit=!!editId;const next=wasEdit?schedules.map(x=>x.id===editId?s:x):[...schedules,s];
+ try{commit(next);activeDay=String(s.day);if(activeChild!=='all')activeChild=s.child;render();$('editor').close();notify(wasEdit?'일정을 수정했습니다.':'일정을 등록했습니다.');}
+ catch(e){$('formError').textContent='저장하지 못했습니다. 브라우저의 저장 공간과 사이트 데이터 허용 설정을 확인해 주세요.';$('formError').hidden=false;}
+});
+$('exportBtn').addEventListener('click',()=>{
+ if(loadBlocked){notify('저장소를 읽지 못해 백업할 수 없습니다.');return;}
+ const data={app:'family-academy-schedule',version:1,exportedAt:new Date().toISOString(),schedules};
+ const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),link=document.createElement('a');
+ link.href=url;link.download='family-schedule-'+new Date().toISOString().slice(0,10)+'.json';document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),30000);notify('백업 다운로드를 요청했습니다. 저장된 파일을 확인해 주세요.');
+});
+$('importBtn').addEventListener('click',()=>$('importFile').click());
+$('importFile').addEventListener('change',async event=>{
+ const file=event.target.files[0];if(!file)return;
+ try{
+  if(file.size>10*1024*1024)throw new Error('파일이 너무 큽니다. 10MB 이하의 백업을 선택하세요.');
+  let data;try{data=JSON.parse(await file.text());}catch(e){throw new Error('올바른 JSON 백업 파일이 아닙니다.');}
+  if(!data||data.app!=='family-academy-schedule'||data.version!==1||!validateList(data.schedules))throw new Error('이 앱에서 만든 유효한 백업 파일이 아닙니다.');
+  if(!confirm('현재 일정을 백업의 '+data.schedules.length+'개 일정으로 모두 교체할까요?\n필요하면 취소 후 현재 일정을 먼저 백업하세요.'))return;
+  try{commit(data.schedules.map(cleanRecord),true);}catch(e){throw new Error('브라우저 저장소에 복원하지 못했습니다. 사이트 데이터 허용 설정을 확인하세요.');}
+  activeDay='all';activeChild='all';render();notify('백업을 복원했습니다.');
+ }catch(e){alert(e.message);}finally{event.target.value='';}
+});
+window.addEventListener('storage',event=>{
+ if(event.key!==KEY&&event.key!==null)return;
+ try{const raw=localStorage.getItem(KEY);const data=raw===null?[]:JSON.parse(raw);if(!validateList(data))throw new Error('invalid');schedules=data.map(cleanRecord);loadBlocked=false;$('storageWarning').hidden=true;if($('editor').open){$('editor').close();notify('다른 창에서 데이터가 바뀌어 편집창을 닫았습니다.');}render();}
+ catch(e){loadBlocked=true;warn('다른 창에서 변경된 데이터를 읽지 못했습니다. 기존 데이터를 보호하기 위해 저장을 중단했습니다.');}
+});
+render();
+</script>
+</body>
+</html>
